@@ -1,0 +1,13 @@
+<h1> To Do List </h1>
+
+<h2><%= button_to "New Item", new_item_path, method: :get %></h2>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= item.header %> - <%= item.body %>
+      <%= button_to "Edit", edit_item_path(item), method: :get %>
+      <%= button_to "Delete", item_path(item), method: :delete %>
+    </li>
+  <% end %>
+</ul>
